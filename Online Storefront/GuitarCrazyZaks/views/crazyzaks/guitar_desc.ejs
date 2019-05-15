@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+
+<main>
+    <div class="jumbotron">
+        <h1><%= required_guitar.name %></h1><br> 
+                    <p>Price:$<%= required_guitar.price %></p><br>
+                    <p>Image:&numsp;<img src="<%= required_guitar.image %>" alt="<%= required_guitar.name %>" height=10%" width="10%"> </p><br>
+                    <p>Description:<%= required_guitar.description %></p><br>
+                    <button>Add to Cart</button>           
+    </div>
+</main>
+
+<footer>
+    <% include ../partials/footer %>
+</footer>

@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+            <meta charset="UTF-8">
+            <title>Nice Burger</title>
+            <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT" rel="stylesheet">
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
+            
+    </head>
+
+    <body>
+        <div main>
+            <div class=showBill>
+                <div class="div_division"><h1>Hey! Hope you enjoy your meal</h1></div>
+                <div class="div_division"><h1>Your total is $<%= total %></h1></div>
+                <div class="div_division"><button onclick="location.href='https://www.paypal.com/us/home'">Pay</button></div>
+                <div class="div_division"><button onclick="location.href='logout'">Logout</button></div>
+            </div>
+            
+        </div>
+        
+    </body>
+
+    <style>
+        body{
+            background-image: url('https://media.giphy.com/media/pcIsZrDmlvFPG/giphy.gif');
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center;
+        }
+        div[main]{
+            width: 50%;
+            font-family: 'Old Standard TT', serif;
+        }
+        .showBill{
+            margin:25%;
+            background: white;
+            padding: 2px;
+        }
+        h1{
+            font-size: 250%;
+        }
+        .div_division{
+            margin: 7px;
+        }
+        button{
+                border-radius: 2px;
+                background: red;
+                font-size: larger;
+                font-family: 'Old Standard TT', serif;
+                color: white;
+        }
+    </style>
+</html>
+
+

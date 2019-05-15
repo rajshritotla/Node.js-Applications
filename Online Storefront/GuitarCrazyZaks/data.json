@@ -1,0 +1,44 @@
+[
+    {
+        "id" : 1,
+        "name" : "Guitar 1", 
+        "price": "200",
+        "image":"guitar_images/guitar_01.png",
+        "description":"I am guitar 1"
+    },
+
+    {
+        "id" : 2 ,
+        "name" : "Guitar 2", 
+        "price": "100",
+        "image":"guitar_images/guitar_02.png",
+        "description":"I am guitar 2"
+    },
+
+    {   "id" : 3, 
+        "name" : "Guitar 3", 
+        "price" : "300" ,
+        "image" :"guitar_images/guitar_03.png", 
+        " description":"I am guitar 3" 
+    },
+
+    {   "id": 4, 
+        "name": "Guitar 4", 
+        "price": "210",
+        "image":"guitar_images/guitar_04.png", 
+        "description":"I am guitar 4" 
+    },
+
+    {   "id":5, 
+        "name": "Guitar 5", 
+        "price": "100",
+        "image":"guitar_images/guitar_05.png", 
+        "description":"I am guitar 5" 
+    },
+    
+    {   "id":6, 
+        "name": "Guitar 6", 
+        "price": "500",
+        "image":"guitar_images/guitar_06.png", 
+        "description":"I am guitar 6" }
+]

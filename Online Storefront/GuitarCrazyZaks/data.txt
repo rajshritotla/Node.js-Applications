@@ -1,0 +1,21 @@
+{
+    "guitarJson":[
+                    {
+                        "id" : "1",
+                        "name" : "Guitar 1", 
+                        "price": "$200",
+                        "image":"guitar_images/guitar_01.png",
+                        "description":"I am guitar 1"
+                    },
+
+                    {
+                        "id" : "2" ,
+                        "name" : "Guitar 2", 
+                        "price": "$100",
+                        "image":"guitar_images/guitar_02.png",
+                        "description":"I am guitar 2"
+                    }
+                ]
+}
+
+

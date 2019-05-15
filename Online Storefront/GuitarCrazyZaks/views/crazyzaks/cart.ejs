@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+<script>
+    var totalPrice =0;
+    
+    function addTotal(p){
+                    parseInt(totalPrice=totalPrice+p);
+                    //console.log("func");
+                    //console.log(totalPrice);
+                    document.getElementById("total").value=totalPrice;
+                }
+
+</script>
+<main>
+    <div class="jumbotron">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Image</th>
+                <th>Price</th>
+            </tr>
+            <% add_guitar.forEach(function(guitar) { %>
+            <tr class="target">
+                <td><%= guitar.name %></td>
+                <td><img src="<%= guitar.image %>" alt="<%= guitar.name %>" height=10%" width="10%"></td>
+                <td>$<%= guitar.price %></td>
+                    <script>
+                       $( ".target" ).show(function() {
+                        addTotal("<%= guitar.price%>");
+                        });
+                    </script>
+            </tr>
+            <% }); %>
+
+            <tr>
+                    <td></td>
+                    <td>Total</td>
+                    <td><input id="total" type="text"></td>
+            </tr>
+
+        </table>
+        <button onclick="doCheckout()">Checkout</button>
+        <script>
+
+                function doCheckout(){
+                    location.href="checkout?total="+totalPrice;
+                }
+        </script>                               
+    </div>
+</main>
+
+<footer>
+    <% include ../partials/footer %>
+</footer>

@@ -1,0 +1,42 @@
+
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+
+<main>
+    <div class="jumbotron">
+        <ul>
+            <% guitars.forEach(function(guitar) { %>
+                <li>
+                    <h1><%= guitar.name %></h1><br> 
+                    <p>Price: $<%= guitar.price %></p><br>
+                    <p>Image:&numsp;<img src="<%= guitar.image %>" alt="<%= guitar.name %>" height=20%" width="10%"> </p><br>
+                    <p>Description:<%= guitar.description %></p><br>
+                    <button onclick='tellMeMore("<%= guitar.id %>")'>Tell Me More</button>
+                    <button onclick='moveToCart("<%= guitar.id %>")'>Add to Cart</button>
+                </li>
+            <% }); %>
+        </ul>
+    </div>
+</main>
+
+<script>
+function tellMeMore(id){
+    //document.cookie=id;
+    location.href="guitar_desc?id="+id;
+}
+
+function moveToCart(id){
+    location.href="cart?id="+id;
+}
+</script>
+
+<footer>
+    <% include ../partials/footer %>
+</footer>

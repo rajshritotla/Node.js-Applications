@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+            <meta charset="UTF-8">
+            <title>Nice Burger</title>
+            <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
+            
+    </head>
+
+    <body>
+        <div main>
+         <div class="div_division">
+            <label>Email: </label>
+            <input type="email" name="email" id="email">
+         </div>
+         <div class="div_division">
+            <label>Password: </label>
+            <input type="password" name="password" id="password">
+         </div>
+         <div class="div_division">
+            <button id="login">Login</button>
+        </div>
+
+        </div>
+        
+    </body>
+    <script>
+            $(document).ready(function(){
+                var email,pass;
+                $("#login").click(function(){
+                    email=$("#email").val();
+                    pass=$("#password").val();
+                    /*
+                    * Perform some validation here.
+                    */
+                    $.post("http://localhost:8080/login",{email:email,pass:pass},function(data){        
+                        if(data==='done')           
+                        {
+                            window.location.href="niceburger";
+                        }
+                    });
+                });
+            });
+    </script>
+    <style>
+            body{
+                background-image: url('https://media.giphy.com/media/pcIsZrDmlvFPG/giphy.gif');
+                background-repeat: no-repeat;
+                background-size: cover;
+                text-align: center;
+            }
+
+            div[main]{
+                width: 30%;
+                font-family: 'Patrick Hand', cursive;
+                font-size: x-large;
+                margin: 15%;
+            }
+       
+
+            .div_division{
+                margin: 7px;
+            }
+
+            input,label{
+                font-size: x-large;
+                font-family: 'Patrick Hand', cursive;
+                
+            }
+
+
+            button{
+                border-radius: 2px;
+                background: red;
+                font-size: larger;
+                font-family: 'Patrick Hand', cursive;
+                color: white;
+            }
+    </style>
+</html>
+
+

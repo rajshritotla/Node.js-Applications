@@ -1,0 +1,179 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+            <meta charset="UTF-8">
+            <title>Nice Burger</title>
+            <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
+            
+    </head>
+
+    <body>
+        <div main>
+            <div class="div_division">
+                <label forselect>Select your roll type</label>
+                <select id="rollType">
+                    <option id="kaiser" value="5">Kaiser</option>
+                    <option id="flatbun" value="5">Flat Bun</option>
+                    <option id="bagel" value="6">Bagel</option>
+                </select>
+            </div>
+            <div class="div_division">
+                <label forselect>Select your toppings</label>
+                <select id="topping" multiple>
+                    <option id="topping1" value="1">Lettuce</option>
+                    <option id="topping2" value="1">Onions</option>
+                    <option id="topping3" value="1">Tomato</option>
+                    <option id="topping4" value="1">Pickels</option>
+                    <option id="topping5" value="1">Hot</option>
+                    <option id="topping6" value="1">Ham</option>
+                    <option id="topping7" value="1">Cheese</option>
+                    <option id="topping8" value="1">Peas</option>
+                    <option id="topping9" value="1">Potato</option>
+                    <option id="topping10" value="1">Meat</option>
+                    <option id="topping11" value="1">Fish</option>
+                    <option id="topping12" value="1">Jalpeno</option>
+                    <option id="topping13" value="1">Red Peppers</option>
+                    <option id="topping14" value="1">Green Peppers</option>
+                    <option id="topping15" value="1">Garlic</option>
+                </select>
+            </div>
+            <div class="div_division">
+                <label forselect>Sides</label>
+                <select id="addOnEat" multiple>
+                    <option id="addOnEat1" value="1">Fries S</option>
+                    <option id="addOnEat2" value="2">Fries M</option>
+                    <option id="addOnEat3" value="3">Fries L</option>
+                    <option id="addOnEat4" value="2">Lays</option>
+                    <option id="addOnEat5 value="2">Choco Cookie</option>
+                </select>
+            </div>
+            
+            <div class="div_division">
+                <label forselect>Drinks</label>
+                <select id="addOnDrink" multiple>
+                    <option id="addOnDrink1" value="3">Coke</option>
+                    <option id="addOnDrink2" value="3">Beer</option>
+                    <option id="addOnDrink3" value="4">Red Wine</option>
+                </select>
+            </div>
+            <div class="div_division">
+                <label>Delivery Options</label>
+                <div>
+                    <input type="radio" id="delivery1" name="delivery1" value="0.33">Uber Eats<br>
+                    <input type="radio" id="delivery1" name="delivery1" value="0.13">Delivery by Restaurant<br>
+                    * Choose none for carryout
+                </div>
+            </div>
+
+            <button id="checkout">Checkout</button>
+
+        </div>
+        
+    </body>
+    <script>
+    $(document).ready(function(){
+
+        var rollType;
+        var topping=new Array();
+        var sides=new Array();
+        var drink=new Array();
+        var delivery;
+
+        $("#checkout").click(function(){
+
+            rolltype=$("#rollType").val();
+            topping=$("#topping").val();
+            sides=$("#addOnEat").val();
+            drink=$("#addOnDrink").val();
+            delivery=$("#delivery1").val();
+
+            var total=0; 
+            total= total+parseInt(rolltype);
+
+            if(topping!==null){/*
+                topping.forEach(function(element){
+                total= parseInt(total) + parseInt(topping[element]);
+                console.log(topping);
+                });*/
+                
+                for(var i=0;i<topping.length;i++){
+                total= parseInt(total) + parseInt(topping[i]);
+                }
+            }
+
+            if(sides!==null){
+                for(var i=0;i<sides.length;i++){
+                total= parseInt(total) + parseInt(sides[i]);
+                }
+            }
+            
+            if(drink!==null){
+                for(var i=0;i<drink.length;i++){
+                    total= parseInt(total) + parseInt(drink[i]);
+                }
+            }
+            
+            if(delivery!==null){
+                total=total + total*parseFloat(delivery);
+            }
+
+            console.log(total);
+            window.location.href="checkout?total="+total;
+            /*$.get("checkout",{total:total},function(data){        
+                
+                window.location.href="checkout";
+                
+            });*/
+        });
+
+        
+    });
+    </script>
+    <style>
+            body{
+                background-image: url('https://media.giphy.com/media/pcIsZrDmlvFPG/giphy.gif');
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            div[main]{
+                width: 40%;
+                font-family: 'Patrick Hand', cursive;
+                font-size: x-large;
+            }
+
+            select,label{
+                margin: 10px;
+            }
+
+            select{
+                font-size: x-large;
+                font-family: 'Patrick Hand', cursive;
+                border-radius: 8px;
+                border-style: groove;
+            }
+
+            label[forselect]{
+                float: left;
+            }
+
+            label{
+                font-weight: bold;
+            }
+
+            .div_division{
+                margin: 7px;
+            }
+
+            button{
+                border-radius: 2px;
+                background: red;
+                font-size: larger;
+                font-family: 'Patrick Hand', cursive;
+                color: white;
+            }
+    </style>
+</html>
+
+
