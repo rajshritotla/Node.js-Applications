@@ -17,3 +17,5 @@ npm install -g node-modules
 npm install nodemon
 
 npm install ejs
+
+node server.js
