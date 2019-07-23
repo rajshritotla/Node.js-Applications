@@ -26,8 +26,10 @@ const express = require("express");
  });
  ```
  
-Create your HTML file, 'index.html'. Put that in the same folder that contains server.js
-  <html>this is the smallest HTML file ever...</html>
+Create your HTML file, 'index.html'. Put that in the same folder that contains server.js 
+```bash
+<html> this is the smallest HTML file ever...</html>
+```
 
 Launch the server, using 
 ```bash
