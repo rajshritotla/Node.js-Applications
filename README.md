@@ -6,7 +6,7 @@ Node.js Quick/Small/Learning Projects
 https://nodejs.org/en/download/
 ```
 
-# Few Commands to run on command line
+# Few useful commands to run on command line
 
 npm init -y
 
