@@ -1,6 +1,6 @@
-# CrazyZak's guitar shop
+# CrazyZak's guitar shop using ExpressJS with Node
 
-In this exercise, am building a online storefront that sells guitars using ExpressJS with Node. 
+In this exercise, am building a online storefront that sells guitars.
 
 # Application minimum requirements:
 
