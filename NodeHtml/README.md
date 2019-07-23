@@ -10,7 +10,10 @@ Run
 npm init -y
 ```
 
-Add express as a dependency (npm install -g --save express)
+Add express as a dependency 
+```bash
+npm install -g --save express
+```
 
 Put the following code into that file:
 ```bash
